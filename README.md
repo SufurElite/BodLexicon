@@ -12,7 +12,7 @@ As of now, you can either run the code by creating a python environment as follo
 
 ### Python Environment
 
-For this project, I recommend using python version 3.10 (and strongly suggest you use the containerized approach).
+For this project, I recommend using python version 3.10 (and strongly suggest you use the containerized approach -- currently needs fixing however).
 
 ```bash
 python -m venv .venv 
@@ -94,6 +94,7 @@ This table is inherently symmetric, which at some point would be good to half.
 
 ## To-Dos
 
+- [ ] Fix the Containerize (gunicorn)
 - [ ] Enable multilingual support, identification of language within the text and relevant glossary usage 
 - [ ] Look into different phonetic variations as well as areas of morphological explanation that can be included
 - [ ] Host the website
