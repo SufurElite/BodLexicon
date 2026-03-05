@@ -192,16 +192,16 @@ def start_up():
     manuscripts = res.fetchall()
     pages = []
     for manuscript in manuscripts:
-        text = manuscript[1].replace("\n", " ")
+        text = manuscript[1].replace("\n", " ").replace("¶", " ").replace("//", " ")
         tokens = p.word_tokenize(text.lower())
         sentences = []
         current_sent = []
         for token in tokens:
             if token in variant_map:
                 variants.append(variant_map[token])
-                sentences.append(" ".join(current_sent))
+                sentences.append(" ".join(current_sent) + " ")
                 sentences.append({"type": "variant", "id": token, "form": token})
-                current_sent = []
+                current_sent = [" "]
             else:
                 current_sent.append(token)
         if current_sent != []:
