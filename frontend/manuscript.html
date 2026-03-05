@@ -792,8 +792,8 @@
   </button>
 
   <div>
-    <div class="page-nav-folio" id="nav-folio-label">fol. 1r</div>
-    <div class="page-nav-folio-sub" id="nav-folio-sub">MS Bodl. 959 · 1 of 24</div>
+    <div class="page-nav-folio" id="nav-folio-label"></div>
+    <div class="page-nav-folio-sub" id="nav-folio-sub"></div>
   </div>
 
   <button class="page-nav-btn" id="btn-next" onclick="changePage(1)">
@@ -805,12 +805,6 @@
 <!-- STATUS BAR -->
 <div class="status-bar" id="status-bar">
   <div id="status-shelfmark">—</div>
-  <div>Variants: <span id="status-variant-count">—</span></div>
-  <div>Instances: <span id="status-instance-count">—</span></div>
-  <div style="margin-left:auto; color:rgba(200,147,42,0.5);">BodLexicon · Digital Bodleian Hackathon 2026</div>
-</div>
-  <div>Variants identified: <span>47</span></div>
-  <div>Instances: <span>312</span></div>
   <div style="margin-left:auto; color:rgba(200,147,42,0.5);">BodLexicon · Digital Bodleian Hackathon 2026</div>
 </div>
 
@@ -1191,7 +1185,7 @@ function renderPage(pageIdx) {
 function renderDetailPanel(v) {
   if (!v) return;
   setText('detail-word',   v.spellings[0].form);
-  setHTML('detail-modern', `<a href="https://quod.lib.umich.edu/m/middle-english-dictionary/dictionary?utf8=%E2%9C%93&search_field=hnf&q=${esc(v.id)}">Link to Modern English Definition</a></em>`);
+  setHTML('detail-modern', `<a style="color:white" href="https://quod.lib.umich.edu/m/middle-english-dictionary/dictionary?utf8=%E2%9C%93&search_field=hnf&q=${esc(v.id)}">Link to Modern English Definition</a></em>`);
 
   const max  = v.spellings[0].count;
   const rows = v.spellings.map((sp, i) => {
@@ -1261,8 +1255,8 @@ function updateFolioNav(pageIdx) {
   const page  = data.pages[pageIdx];
   const total = data.manuscript.totalInstances;
   setText('nav-folio-label', page.label);
-  setText('nav-folio-sub',   `${data.manuscript.shelfmark} · ${pageIdx + 1} of ${data.pages.length}`);
-  setText('status-shelfmark', `${data.manuscript.shelfmark} · ${page.label}`);
+  setText('nav-folio-sub',   `${pageIdx + 1} of ${data.pages.length}`);
+  setText('status-shelfmark', `${page.label}`);
   document.getElementById('btn-prev')?.classList.toggle('disabled', pageIdx === 0);
   document.getElementById('btn-next')?.classList.toggle('disabled', pageIdx >= data.pages.length - 1);
 }
