@@ -1,5 +1,7 @@
 # BodLexicon 
 
+![](imgs/interface.png?raw=true)
+
 This code repository, developed for the Code the Collection Oxford Hackathon 2026, was developed with the aim of identifying dialect change in given transcribed manuscripts with the proof of concept being done for the Vernon Manuscript, Piers Plowman poem. 
 
 It provides a reproducible framework from which to recreate the experiments in a containerized environment (for ease of both local and remote ddeployment) and a proof-of-concept for subsequent work in the area.
