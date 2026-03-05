@@ -36,7 +36,11 @@ def load_values():
 
     global variant_map
     variant_map = {}
+    reverse_tuple = set()
     for pair in word_pairs:
+        if pair in reverse_tuple:
+            continue
+        reverse_tuple.add((pair[1], pair[0]))
         if pair[0] not in variant_map:
             variant_map[pair[0]] = {
                 "id": pair[0],
