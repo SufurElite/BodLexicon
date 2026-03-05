@@ -732,9 +732,8 @@
     <div class="sidebar-section">
       <div class="sidebar-label">Manuscript</div>
       <div class="ms-info">
-        <div class="ms-shelfmark">MS Bodl. 959</div>
-        <div class="ms-title">Prick of Conscience</div>
-        <div class="ms-meta">Bodleian Library · f.1r–f.12v · c. 1350–1400</div>
+        <div class="ms-title"     id="ms-title">Loading…</div>
+        <div class="ms-meta"      id="ms-meta">Loading…</div>
       </div>
     </div>
 
@@ -742,80 +741,9 @@
       <div class="sidebar-label">Variant Groups <div class="badge">47</div></div>
     </div>
 
-    <div class="variant-list">
-      <div class="variant-item active" onclick="selectVariant('thogh')">
-        <div style="flex:1;">
-          <div class="variant-word">thogh / though</div>
-          <div class="variant-modern">→ though</div>
-          <div class="freq-bar-mini" style="background: linear-gradient(90deg, var(--oxford-blue) 85%, var(--vellum) 85%);"></div>
-        </div>
-        <div class="variant-count">12</div>
+    <div class="variant-list" id="variant-list">
+        <!-- populated by renderVariantList() -->
       </div>
-      <div class="variant-item" onclick="selectVariant('schulde')">
-        <div style="flex:1;">
-          <div class="variant-word">schulde / sholde</div>
-          <div class="variant-modern">→ should</div>
-          <div class="freq-bar-mini" style="background: linear-gradient(90deg, #d4580a 70%, var(--vellum) 70%);"></div>
-        </div>
-        <div class="variant-count">9</div>
-      </div>
-      <div class="variant-item" onclick="selectVariant('mykel')">
-        <div style="flex:1;">
-          <div class="variant-word">mykel / mykell</div>
-          <div class="variant-modern">→ much / great</div>
-          <div class="freq-bar-mini" style="background: linear-gradient(90deg, var(--bodleian-gold) 55%, var(--vellum) 55%);"></div>
-        </div>
-        <div class="variant-count">7</div>
-      </div>
-      <div class="variant-item">
-        <div style="flex:1;">
-          <div class="variant-word">worlde / werlde</div>
-          <div class="variant-modern">→ world</div>
-          <div class="freq-bar-mini" style="background: linear-gradient(90deg, #5dade2 45%, var(--vellum) 45%);"></div>
-        </div>
-        <div class="variant-count">6</div>
-      </div>
-      <div class="variant-item">
-        <div style="flex:1;">
-          <div class="variant-word">soule / sawle</div>
-          <div class="variant-modern">→ soul</div>
-          <div class="freq-bar-mini" style="background: linear-gradient(90deg, #a9cce3 38%, var(--vellum) 38%);"></div>
-        </div>
-        <div class="variant-count">5</div>
-      </div>
-      <div class="variant-item">
-        <div style="flex:1;">
-          <div class="variant-word">goode / gude</div>
-          <div class="variant-modern">→ good</div>
-          <div class="freq-bar-mini" style="background: linear-gradient(90deg, #a9cce3 30%, var(--vellum) 30%);"></div>
-        </div>
-        <div class="variant-count">4</div>
-      </div>
-      <div class="variant-item">
-        <div style="flex:1;">
-          <div class="variant-word">euery / eueri</div>
-          <div class="variant-modern">→ every</div>
-          <div class="freq-bar-mini" style="background: linear-gradient(90deg, #d4e6f1 25%, var(--vellum) 25%);"></div>
-        </div>
-        <div class="variant-count">3</div>
-      </div>
-      <div class="variant-item">
-        <div style="flex:1;">
-          <div class="variant-word">þer / þere</div>
-          <div class="variant-modern">→ there</div>
-          <div class="freq-bar-mini" style="background: linear-gradient(90deg, #d4e6f1 20%, var(--vellum) 20%);"></div>
-        </div>
-        <div class="variant-count">3</div>
-      </div>
-      <div class="variant-item">
-        <div style="flex:1;">
-          <div class="variant-word">manne / man</div>
-          <div class="variant-modern">→ man</div>
-          <div class="freq-bar-mini" style="background: linear-gradient(90deg, #d4e6f1 15%, var(--vellum) 15%);"></div>
-        </div>
-        <div class="variant-count">2</div>
-      </div>
-    </div>
 
     <div class="sidebar-section" style="margin-top:auto;">
       <div class="sidebar-label">Highlight Key</div>
@@ -834,386 +762,19 @@
 
       <!-- MS TEXT -->
       <div class="ms-pane">
-        <div class="ms-page">
-          <div class="ms-folio">
-            <span>fol. 1r</span>
-            <span class="ms-shelfmark-inline">MS Bodl. 959 · Digital Bodleian</span>
-          </div>
-
-          <div class="ms-text">
-            <p>
-              <span class="rubricated">H</span>ere bigyneþ a tretys þat is cleped þe prikyng of
-              mannes
-              <span class="variant variant-freq-4">
-                conscience
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">conscience</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">conscience</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">11</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">consyence</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:27%;"></div></div>
-                    <span class="tooltip-count">3</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">concience</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:9%;"></div></div>
-                    <span class="tooltip-count">1</span>
-                  </div>
-                </div>
-              </span>.
-              Þis
-              <span class="variant variant-freq-3">
-                worlde
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">world</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">worlde</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">6</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">werlde</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:50%;"></div></div>
-                    <span class="tooltip-count">3</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">world</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:17%;"></div></div>
-                    <span class="tooltip-count">1</span>
-                  </div>
-                </div>
-              </span>
-              nis bot vanitee &amp; wrecchednes, and
-              <span class="variant variant-freq-2">
-                mykel
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">much / great</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">mykel</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">5</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">mykell</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:60%;"></div></div>
-                    <span class="tooltip-count">3</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">mikel</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:20%;"></div></div>
-                    <span class="tooltip-count">1</span>
-                  </div>
-                </div>
-              </span>
-              sorowe. Euery
-              <span class="variant variant-freq-2">
-                manne
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">man</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">manne</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">4</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">man</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:50%;"></div></div>
-                    <span class="tooltip-count">2</span>
-                  </div>
-                </div>
-              </span>
-              þat hath resoun &amp; skille
-              <span class="variant variant-freq-1">
-                schulde
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">should</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">schulde</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">7</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">sholde</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:57%;"></div></div>
-                    <span class="tooltip-count">4</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">shulde</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:14%;"></div></div>
-                    <span class="tooltip-count">1</span>
-                  </div>
-                </div>
-              </span>
-              byþenke him
-              <span class="variant variant-freq-2">
-                thogh
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">though</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">thogh</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">8</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">though</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:62%;"></div></div>
-                    <span class="tooltip-count">5</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">þogh</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:25%;"></div></div>
-                    <span class="tooltip-count">2</span>
-                  </div>
-                </div>
-              </span>
-              he be neuer so riche or
-              <span class="variant variant-freq-2">
-                mykel
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">much / great</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">mykel</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">5</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">mykell</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:60%;"></div></div>
-                    <span class="tooltip-count">3</span>
-                  </div>
-                </div>
-              </span>
-              in worschipe.
-            </p>
-            <p>
-              Of his
-              <span class="variant variant-freq-3">
-                soule
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">soul</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">soule</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">5</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">sawle</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:60%;"></div></div>
-                    <span class="tooltip-count">3</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">saulle</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:20%;"></div></div>
-                    <span class="tooltip-count">1</span>
-                  </div>
-                </div>
-              </span>
-              helþe, þer God gyues eche
-              <span class="variant variant-freq-1">
-                goode
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">good</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">goode</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">4</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">gude</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:50%;"></div></div>
-                    <span class="tooltip-count">2</span>
-                  </div>
-                </div>
-              </span>
-              manne
-              <span class="variant variant-freq-2">
-                sholde
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">should</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">sholde</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">7</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">schulde</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:57%;"></div></div>
-                    <span class="tooltip-count">4</span>
-                  </div>
-                </div>
-              </span>
-              haue
-              <span class="variant variant-freq-2">
-                þogh
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">though</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">þogh</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">8</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">thogh</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:62%;"></div></div>
-                    <span class="tooltip-count">5</span>
-                  </div>
-                </div>
-              </span>
-              alle þis
-              <span class="variant variant-freq-3">
-                worlde
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">world</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">worlde</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">6</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">werlde</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:50%;"></div></div>
-                    <span class="tooltip-count">3</span>
-                  </div>
-                </div>
-              </span>
-              were his owne.
-            </p>
-            <p>
-              For þe
-              <span class="variant variant-freq-4">
-                prickyng
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">pricking of conscience</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">prickyng</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">9</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">prikyng</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:55%;"></div></div>
-                    <span class="tooltip-count">5</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">pryckyng</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:22%;"></div></div>
-                    <span class="tooltip-count">2</span>
-                  </div>
-                </div>
-              </span>
-              of
-              <span class="variant variant-freq-4">
-                conscience
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">conscience</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">conscience</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">11</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">consyence</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:27%;"></div></div>
-                    <span class="tooltip-count">3</span>
-                  </div>
-                </div>
-              </span>
-              maketh a
-              <span class="variant variant-freq-2">
-                manne
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">man</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">manne</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">4</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">man</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:50%;"></div></div>
-                    <span class="tooltip-count">2</span>
-                  </div>
-                </div>
-              </span>
-              to fle synne &amp; drede God, and loue his euencristen
-              <span class="variant variant-freq-1">
-                goode
-                <div class="variant-tooltip">
-                  <div class="tooltip-modern">good</div>
-                  <div class="tooltip-label">Spelling frequency in this MS</div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling current-spelling">goode</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:100%;"></div></div>
-                    <span class="tooltip-count">4</span>
-                  </div>
-                  <div class="tooltip-row">
-                    <span class="tooltip-spelling">gude</span>
-                    <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:50%;"></div></div>
-                    <span class="tooltip-count">2</span>
-                  </div>
-                </div>
-              </span>
-              and trewe.
-            </p>
-          </div>
+        <div class="ms-page" id="ms-page">
+          <!-- populated by renderPage() -->
         </div>
       </div>
 
       <!-- DETAIL PANEL -->
       <div class="detail-pane">
         <div class="detail-header">
-          <div class="detail-word" id="detail-word">thogh</div>
-          <div class="detail-modern">Modern English: though</div>
+          <div class="detail-word" id="detail-word">—</div>
+          <div class="detail-modern" id="detail-modern">Select a highlighted word</div>
         </div>
-        <div class="detail-body">
-
-          <div class="info-note">
-            Northern &amp; East Midlands variant of <em>though</em>. The <em>gh</em> spelling reflects Old English <em>þeah</em>, with scribal variation between <em>þ</em> and <em>th</em>.
-          </div>
-
-          <div class="detail-section-title">Spelling Frequency in This MS</div>
-          <div class="freq-chart">
-            <div class="freq-row highlighted">
-              <div class="freq-spelling">thogh</div>
-              <div class="freq-bar-wrap"><div class="freq-bar-fill" style="width:100%;"></div></div>
-              <div class="freq-n">8</div>
-            </div>
-            <div class="freq-row">
-              <div class="freq-spelling">though</div>
-              <div class="freq-bar-wrap"><div class="freq-bar-fill" style="width:62%; opacity:0.75;"></div></div>
-              <div class="freq-n">5</div>
-            </div>
-            <div class="freq-row">
-              <div class="freq-spelling">þogh</div>
-              <div class="freq-bar-wrap"><div class="freq-bar-fill" style="width:25%; opacity:0.55;"></div></div>
-              <div class="freq-n">2</div>
-            </div>
-            <div class="freq-row">
-              <div class="freq-spelling">þoh</div>
-              <div class="freq-bar-wrap"><div class="freq-bar-fill" style="width:12%; opacity:0.4;"></div></div>
-              <div class="freq-n">1</div>
-            </div>
-          </div>
-
+        <div class="detail-body" id="detail-body">
+          <!-- populated by renderDetailPanel() -->
         </div>
       </div>
 
@@ -1231,8 +792,8 @@
   </button>
 
   <div>
-    <div class="page-nav-folio" id="nav-folio-label">fol. 1r</div>
-    <div class="page-nav-folio-sub" id="nav-folio-sub">MS Bodl. 959 · 1 of 24</div>
+    <div class="page-nav-folio" id="nav-folio-label"></div>
+    <div class="page-nav-folio-sub" id="nav-folio-sub"></div>
   </div>
 
   <button class="page-nav-btn" id="btn-next" onclick="changePage(1)">
@@ -1242,92 +803,515 @@
 </div>
 
 <!-- STATUS BAR -->
-<div class="status-bar">
-  <div>MS Bodl. 959 · fol. 1r</div>
-  <div>Variants identified: <span>47</span></div>
-  <div>Instances: <span>312</span></div>
+<div class="status-bar" id="status-bar">
+  <div id="status-shelfmark">—</div>
   <div style="margin-left:auto; color:rgba(200,147,42,0.5);">BodLexicon · Digital Bodleian Hackathon 2026</div>
 </div>
 
 <script>
-  function selectVariant(id) {
-    document.querySelectorAll('.variant-item').forEach(i => i.classList.remove('active'));
-    document.querySelectorAll('.variant-item').forEach(item => {
-      const w = item.querySelector('.variant-word');
-      if (w && w.textContent.toLowerCase().includes(id.toLowerCase())) {
-        item.classList.add('active');
-      }
-    });
-  }
+// ═══════════════════════════════════════════════════════════════════════════
+//  BodLexicon — Data & Rendering Layer
+//
+//  HOW TO CONNECT YOUR BACKEND
+//  ────────────────────────────
+//  1. Make your API return JSON matching the DATA shape below.
+//  2. At the bottom of this script, replace:
+//       initApp(DATA);
+//     with:
+//       fetchAndInit('http://127.0.0.1:8080/init');
+//
+//  The JSON shape your endpoint must return is documented in DATA below.
+// ═══════════════════════════════════════════════════════════════════════════
 
-  // Page navigation
-  const folios = [
-    { label: 'fol. 1r', sub: 'MS Bodl. 959 · 1 of 24' },
-    { label: 'fol. 1v', sub: 'MS Bodl. 959 · 2 of 24' },
-    { label: 'fol. 2r', sub: 'MS Bodl. 959 · 3 of 24' },
-    { label: 'fol. 2v', sub: 'MS Bodl. 959 · 4 of 24' },
-    { label: 'fol. 3r', sub: 'MS Bodl. 959 · 5 of 24' },
-    { label: 'fol. 3v', sub: 'MS Bodl. 959 · 6 of 24' },
-    { label: 'fol. 4r', sub: 'MS Bodl. 959 · 7 of 24' },
-    { label: 'fol. 4v', sub: 'MS Bodl. 959 · 8 of 24' },
-    { label: 'fol. 5r', sub: 'MS Bodl. 959 · 9 of 24' },
-    { label: 'fol. 5v', sub: 'MS Bodl. 959 · 10 of 24' },
-    { label: 'fol. 6r', sub: 'MS Bodl. 959 · 11 of 24' },
-    { label: 'fol. 6v', sub: 'MS Bodl. 959 · 12 of 24' },
-    { label: 'fol. 7r', sub: 'MS Bodl. 959 · 13 of 24' },
-    { label: 'fol. 7v', sub: 'MS Bodl. 959 · 14 of 24' },
-    { label: 'fol. 8r', sub: 'MS Bodl. 959 · 15 of 24' },
-    { label: 'fol. 8v', sub: 'MS Bodl. 959 · 16 of 24' },
-    { label: 'fol. 9r', sub: 'MS Bodl. 959 · 17 of 24' },
-    { label: 'fol. 9v', sub: 'MS Bodl. 959 · 18 of 24' },
-    { label: 'fol. 10r', sub: 'MS Bodl. 959 · 19 of 24' },
-    { label: 'fol. 10v', sub: 'MS Bodl. 959 · 20 of 24' },
-    { label: 'fol. 11r', sub: 'MS Bodl. 959 · 21 of 24' },
-    { label: 'fol. 11v', sub: 'MS Bodl. 959 · 22 of 24' },
-    { label: 'fol. 12r', sub: 'MS Bodl. 959 · 23 of 24' },
-    { label: 'fol. 12v', sub: 'MS Bodl. 959 · 24 of 24' },
-  ];
 
-  let currentPage = 0;
+// ─── DUMMY DATA ─────────────────────────────────────────────────────────────
+// Replace this entire object with a fetch() call to your own endpoint.
+// Every key here corresponds to a rendered element in the UI.
+const DATA = {
 
-  function changePage(dir) {
-    const next = currentPage + dir;
-    if (next < 0 || next >= folios.length) return;
-    currentPage = next;
+  // Manuscript-level metadata
+  manuscript: {
+    title:          "Prick of Conscience",    // shown in sidebar
+    repository:     "Bodleian Library",       // shown in sidebar
+  },
 
-    // Update folio label
-    document.getElementById('nav-folio-label').textContent = folios[currentPage].label;
-    document.getElementById('nav-folio-sub').textContent = folios[currentPage].sub;
-
-    // Update ms-folio inline display
-    const folioSpans = document.querySelectorAll('.ms-folio span');
-    if (folioSpans.length > 0) folioSpans[0].textContent = folios[currentPage].label;
-
-    // Update status bar first item
-    const statusItems = document.querySelectorAll('.status-bar div');
-    if (statusItems.length > 0) statusItems[0].textContent = 'MS Bodl. 959 · ' + folios[currentPage].label;
-
-    // Update prev/next button states
-    document.getElementById('btn-prev').classList.toggle('disabled', currentPage === 0);
-    document.getElementById('btn-next').classList.toggle('disabled', currentPage === folios.length - 1);
-
-    // Scroll ms-pane to top
-    const pane = document.querySelector('.ms-pane');
-    if (pane) pane.scrollTop = 0;
-
-    // Animate page transition
-    const page = document.querySelector('.ms-page');
-    if (page) {
-      page.style.opacity = '0';
-      page.style.transform = dir > 0 ? 'translateX(18px)' : 'translateX(-18px)';
-      page.style.transition = 'opacity 0.18s ease, transform 0.18s ease';
-      setTimeout(() => {
-        page.style.opacity = '1';
-        page.style.transform = 'translateX(0)';
-      }, 180);
+  // List of variant groups shown in the left sidebar.
+  // Displayed in order given; first spelling = dominant form.
+  variants: [
+    {
+      id:            "thogh",        // unique key – must match tokens in pages[]
+      forms:         ["thogh", "though", "þogh", "þoh"],   // all attested spellings
+      works: ["fol. 1r","fol. 2r"],
+      modernEnglish: "though",       // shown in tooltip + detail panel
+      note:          "Northern & East Midlands variant of <em>though</em>. The <em>gh</em> spelling reflects Old English <em>þeah</em>, with scribal variation between <em>þ</em> and <em>th</em>.",
+      spellings: [                   // frequency table in detail panel & tooltip
+        { form: "thogh",  count: 8 },
+        { form: "though", count: 5 },
+        { form: "þogh",   count: 2 },
+        { form: "þoh",    count: 1 }
+      ]
+    },
+    {
+      id:            "schulde",
+      forms:         ["schulde", "sholde", "shulde"],
+      modernEnglish: "should",
+      works: ["fol. 1r"],
+      note:          "OE <em>sceolde</em>. <em>sch-</em> is a W./N. Midlands feature; <em>sholde</em> is more southerly.",
+      spellings: [
+        { form: "schulde", count: 7 },
+        { form: "sholde",  count: 4 },
+        { form: "shulde",  count: 1 }
+      ]
+    },
+    {
+      id:            "mykel",
+      forms:         ["mykel", "mykell", "mikel"],
+      modernEnglish: "much / great",
+      works: ["fol. 1r"],
+      note:          "ON <em>mikill</em>. Double-<em>l</em> variants indicate Northern/Scots scribal influence.",
+      spellings: [
+        { form: "mykel",  count: 5 },
+        { form: "mykell", count: 3 },
+        { form: "mikel",  count: 1 }
+      ]
+    },
+    {
+      id:            "worlde",
+      forms:         ["worlde", "werlde", "world"],
+      modernEnglish: "world",
+      works: ["fol. 1r"],
+      note:          "OE <em>woruld</em>. Final <em>-e</em> is a Northern/Midlands scribal feature; <em>werlde</em> reflects an E. Midlands vowel shift.",
+      spellings: [
+        { form: "worlde", count: 6 },
+        { form: "werlde", count: 3 },
+        { form: "world",  count: 1 }
+      ]
+    },
+    {
+      id:            "soule",
+      forms:         ["soule", "sawle", "saulle"],
+      modernEnglish: "soul",
+      works: ["fol. 1r"],
+      note:          "OE <em>sāwol</em>. <em>sawle</em> preserves the OE form; <em>soule</em> is the Anglo-French influenced Midlands spelling.",
+      spellings: [
+        { form: "soule",  count: 5 },
+        { form: "sawle",  count: 3 },
+        { form: "saulle", count: 1 }
+      ]
+    },
+    {
+      id:            "goode",
+      forms:         ["goode", "gude"],
+      modernEnglish: "good",
+      works: ["fol. 1r"],
+      note:          "OE <em>gōd</em>. Final <em>-e</em> is a N. Midlands convention; <em>gude</em> is the Northern/Scots form.",
+      spellings: [
+        { form: "goode", count: 4 },
+        { form: "gude",  count: 2 }
+      ]
+    },
+    {
+      id:            "euery",
+      forms:         ["euery", "eueri"],
+      modernEnglish: "every",
+      works: ["fol. 1r"],
+      note:          "OE <em>ǣfre ǣlc</em>. Variation between <em>-y</em> and <em>-i</em> finals is orthographic.",
+      spellings: [
+        { form: "euery", count: 4 },
+        { form: "eueri", count: 2 }
+      ]
+    },
+    {
+      id:            "ther",
+      forms:         ["þer", "þere"],
+      modernEnglish: "there",
+      works: ["fol. 1r"],
+      note:          "OE <em>þǣr</em>. Thorn/th variation is a common 14c scribal feature.",
+      spellings: [
+        { form: "þer",  count: 3 },
+        { form: "þere", count: 2 }
+      ]
+    },
+    {
+      id:            "manne",
+      forms:         ["manne", "man"],
+      modernEnglish: "man",
+      works: ["fol. 1r"],
+      note:          "OE <em>mann</em>. Geminate <em>-nn-</em> with final <em>-e</em> is a N. Midlands scribal habit.",
+      spellings: [
+        { form: "manne", count: 4 },
+        { form: "man",   count: 2 }
+      ]
     }
+  ],
+
+  // One entry per folio page shown in the reader.
+  // label     – folio reference shown in the nav bar and at top of page.
+  // paragraphs – array of paragraphs; each paragraph is an array of tokens.
+  //
+  // TOKEN TYPES:
+  //   "plain string"                  – rendered as-is
+  //   { type:"rubricated", text:"H" } – large red decorated initial
+  //   { type:"variant", id:"thogh", form:"thogh" }
+  //                                   – highlighted word; id must match a
+  //                                     variants[].id above
+  pages: [
+    {
+      label: "fol. 1r",
+      paragraphs: [
+        [
+          { type: "rubricated", text: "H" },
+          "ere bigyneþ a tretys þat is cleped þe prikyng of mannes ",
+          { type: "variant", id: "schulde", form: "schulde" },
+          " byþenke him ",
+          { type: "variant", id: "thogh",   form: "thogh"   },
+          " he be neuer so riche or ",
+          { type: "variant", id: "mykel",   form: "mykel"   },
+          " in worschipe. Þis ",
+          { type: "variant", id: "worlde",  form: "worlde"  },
+          " nis bot vanitee & wrecchednes, and ",
+          { type: "variant", id: "mykel",   form: "mykel"   },
+          " sorowe."
+        ],
+        [
+          "Of his ",
+          { type: "variant", id: "soule",   form: "soule"   },
+          " helþe, þer God gyues eche ",
+          { type: "variant", id: "goode",   form: "goode"   },
+          " ",
+          { type: "variant", id: "manne",   form: "manne"   },
+          " ",
+          { type: "variant", id: "schulde", form: "sholde"  },
+          " haue ",
+          { type: "variant", id: "thogh",   form: "þogh"    },
+          " alle þis ",
+          { type: "variant", id: "worlde",  form: "worlde"  },
+          " were his owne."
+        ],
+        [
+          "For ",
+          { type: "variant", id: "euery",   form: "euery"   },
+          " ",
+          { type: "variant", id: "manne",   form: "manne"   },
+          " þat hath resoun & skille ",
+          { type: "variant", id: "schulde", form: "schulde" },
+          " loue his euencristen ",
+          { type: "variant", id: "goode",   form: "goode"   },
+          " and trewe, ",
+          { type: "variant", id: "thogh",   form: "though"  },
+          " ",
+          { type: "variant", id: "ther",    form: "þer"     },
+          " be ",
+          { type: "variant", id: "mykel",   form: "mykell"  },
+          " synne in þe ",
+          { type: "variant", id: "worlde",  form: "werlde"  },
+          "."
+        ]
+      ]
+    },
+    {
+      label: "fol. 1v",
+      paragraphs: [
+        [
+          { type: "rubricated", text: "Þ" },
+          "e firste partye of þis boke spekeþ of þe wrecchednesse of ",
+          { type: "variant", id: "manne",   form: "man"     },
+          ", and how he is ",
+          { type: "variant", id: "mykel",   form: "mykell"  },
+          " byholden to God for his creacion and his reformacion."
+        ],
+        [
+          "For ",
+          { type: "variant", id: "euery",   form: "eueri"   },
+          " ",
+          { type: "variant", id: "manne",   form: "manne"   },
+          " þat haþ witte ",
+          { type: "variant", id: "schulde", form: "sholde"  },
+          " knowe hymself, ",
+          { type: "variant", id: "thogh",   form: "though"  },
+          " he be of hegh estate, and haue drede of his endyng."
+        ],
+        [
+          "His ",
+          { type: "variant", id: "soule",   form: "sawle"   },
+          " schal passe oute of his body and come before þe iuge of alle þe ",
+          { type: "variant", id: "worlde",  form: "werlde"  },
+          ", and ",
+          { type: "variant", id: "ther",    form: "þere"    },
+          " schal conscience bere witnesse ageyns him."
+        ]
+      ]
+    },
+    {
+      label: "fol. 2r",
+      paragraphs: [
+        [
+          { type: "rubricated", text: "N" },
+          "ow lerne we howe ",
+          { type: "variant", id: "mykel",   form: "mykel"   },
+          " grace God gyueþ to hem þat wyllen receye it with a ",
+          { type: "variant", id: "goode",   form: "gude"    },
+          " herte and trewe ",
+          { type: "variant", id: "soule",   form: "soule"   },
+          "."
+        ],
+        [
+          "Ryght as a prikke of a nedyl maketh a ",
+          { type: "variant", id: "manne",   form: "manne"   },
+          " to fele sorowe, so doþ conscience in his ",
+          { type: "variant", id: "soule",   form: "sawle"   },
+          " ",
+          { type: "variant", id: "thogh",   form: "thogh"   },
+          " he dwell in þis ",
+          { type: "variant", id: "worlde",  form: "worlde"  },
+          " & drede God."
+        ]
+      ]
+    }
+  ]
+
+}; // end DATA
+
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  FETCH HELPER — swap initApp(DATA) at the bottom for this when ready
+// ═══════════════════════════════════════════════════════════════════════════
+async function fetchAndInit(url) {
+  const msPage = document.getElementById('ms-page');
+  if (msPage) msPage.innerHTML = '<div style="padding:48px;text-align:center;font-family:\'Crimson Pro\',serif;font-size:16px;color:rgba(0,33,71,0.4);font-style:italic;">Loading…</div>';
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    initApp(data);
+  } catch (e) {
+    if (msPage) msPage.innerHTML = `<div style="padding:48px;text-align:center;font-family:'Crimson Pro',serif;color:#8b2020;font-style:italic;">Failed to load: ${e.message}</div>`;
+  }
+}
+
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════════════════════════════════
+function initApp(data) {
+  window._data        = data;
+  window._currentPage = 0;
+  const page  = data.pages[0];
+  renderMeta(data);
+  renderVariantList(data.variants,page.label);
+  renderPage(0);
+  renderDetailPanel(data.variants[0]);
+  updateFolioNav(0);
+
+  // Highlight first sidebar item
+  const first = document.querySelector('.variant-item');
+  if (first) first.classList.add('active');
+}
+
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  RENDERERS
+// ═══════════════════════════════════════════════════════════════════════════
+
+// ── Manuscript metadata ───────────────────────────────────────────────────
+function renderMeta(data) {
+  const ms = data.manuscript;
+  setText('ms-title',             ms.title);
+  setText('ms-meta',              `${ms.repository}`);
+}
+
+// ── Sidebar variant list ──────────────────────────────────────────────────
+function renderVariantList(variants, pageLabel) {
+  const el = document.getElementById('variant-list');
+  if (!el) return;
+
+  // Filter variants to only those where the current page is in variant.works
+  const filtered = variants.filter(v => v.works.includes(pageLabel));
+
+  if (filtered.length === 0) {
+    el.innerHTML = '<div class="no-variants">No variants on this page</div>';
+    return;
   }
 
+  const maxTotal = Math.max(...filtered.map(totalCount));
+
+  el.innerHTML = filtered.map(v => {
+    const tot = totalCount(v);
+    const pct = Math.round(tot / maxTotal * 100);
+    const fc  = freqBand(tot);
+    const col = ['', '#b5c8e0', 'var(--bodleian-gold)', '#d4580a', 'var(--red-rubric)'][fc];
+    const top2 = v.spellings.slice(0,2).map(s => s.form).join(' / ');
+    return `<div class="variant-item" id="sidebar-${v.id}" onclick="selectVariant('${v.id}')">
+      <div style="flex:1">
+        <div class="variant-word">${esc(top2)}</div>
+        <div class="freq-bar-mini" style="background:linear-gradient(90deg,${col} ${pct}%,var(--vellum) ${pct}%)"></div>
+      </div>
+      <div class="variant-count">${tot}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── Manuscript page text ──────────────────────────────────────────────────
+function renderPage(pageIdx) {
+  const data    = window._data;
+  const page    = data.pages[pageIdx];
+  const varMap  = Object.fromEntries(data.variants.map(v => [v.id, v]));
+  const el      = document.getElementById('ms-page');
+  if (!el || !page) return;
+
+  const paras = page.paragraphs.map(tokens => {
+    const inner = tokens.map(tok => {
+      if (typeof tok === 'string') return esc(tok);
+      if (tok.type === 'rubricated') return `<span class="rubricated">${esc(tok.text)}</span>`;
+      if (tok.type === 'variant') {
+        const v  = varMap[tok.id];
+        const fc = freqBand(totalCount(v));
+        return `<span class="variant variant-freq-${fc}" onclick="selectVariant('${tok.id}')">${esc(tok.form)}${buildTooltip(v, tok.form)}</span>`;
+      }
+      return '';
+    }).join('');
+    return `<p>${inner}</p>`;
+  }).join('');
+
+  el.innerHTML = `
+    <div class="ms-folio">
+      <span id="ms-folio-label">${esc(page.label)}</span>
+      <span class="ms-shelfmark-inline">${esc(data.manuscript.shelfmark)} · Digital Bodleian</span>
+    </div>
+    <div class="ms-text">${paras}</div>`;
+}
+
+// ── Right-panel detail ────────────────────────────────────────────────────
+function renderDetailPanel(v) {
+  if (!v) return;
+  setText('detail-word',   v.spellings[0].form);
+  setHTML('detail-modern', `<a style="color:white" href="https://quod.lib.umich.edu/m/middle-english-dictionary/dictionary?utf8=%E2%9C%93&search_field=hnf&q=${esc(v.id)}">Link to Modern English Definition</a></em>`);
+
+  const max  = v.spellings[0].count;
+  const rows = v.spellings.map((sp, i) => {
+    const pct = Math.round(sp.count / max * 100);
+    const hl  = i === 0 ? ' highlighted' : '';
+    const op  = i === 0 ? '' : `opacity:${Math.max(0.35, 1 - i * 0.18).toFixed(2)};`;
+    return `<div class="freq-row${hl}">
+      <div class="freq-spelling">${esc(sp.form)}</div>
+      <div class="freq-bar-wrap"><div class="freq-bar-fill" style="width:${pct}%;${op}"></div></div>
+      <div class="freq-n">${sp.count}</div>
+    </div>`;
+  }).join('');
+
+  setHTML('detail-body', `
+    <div class="detail-section-title">Spelling Frequency in This MS</div>
+    <div class="freq-chart">${rows}</div>`);
+}
+
+// ── Hover tooltip ─────────────────────────────────────────────────────────
+function buildTooltip(v, currentForm) {
+  if (!v) return '';
+  const max  = v.spellings[0].count;
+  const rows = v.spellings.map(sp => {
+    const pct  = Math.round(sp.count / max * 100);
+    const cur  = sp.form === currentForm ? ' current-spelling' : '';
+    return `<div class="tooltip-row">
+      <span class="tooltip-spelling${cur}">${esc(sp.form)}</span>
+      <div class="tooltip-bar-wrap"><div class="tooltip-bar-fill" style="width:${pct}%"></div></div>
+      <span class="tooltip-count">${sp.count}</span>
+    </div>`;
+  }).join('');
+  return `<div class="variant-tooltip">
+<div class="tooltip-label">Spelling frequency in this MS</div>
+    ${rows}
+  </div>`;
+}
+
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  PAGE NAVIGATION
+// ═══════════════════════════════════════════════════════════════════════════
+function changePage(dir) {
+  const data = window._data;
+  const next = window._currentPage + dir;
+  if (!data || next < 0 || next >= data.pages.length) return;
+  window._currentPage = next;
+  const page  = data.pages[next];
+  renderVariantList(data.variants,page.label);
+  updateFolioNav(next);
+
+  const el = document.getElementById('ms-page');
+  if (el) {
+    el.style.opacity    = '0';
+    el.style.transform  = dir > 0 ? 'translateX(18px)' : 'translateX(-18px)';
+    el.style.transition = 'opacity 0.18s ease, transform 0.18s ease';
+    setTimeout(() => {
+      renderPage(next);
+      el.style.opacity   = '1';
+      el.style.transform = 'translateX(0)';
+      document.querySelector('.ms-pane')?.scrollTo({ top: 0 });
+    }, 180);
+  }
+}
+
+function updateFolioNav(pageIdx) {
+  const data  = window._data;
+  const page  = data.pages[pageIdx];
+  const total = data.manuscript.totalInstances;
+  setText('nav-folio-label', page.label);
+  setText('nav-folio-sub',   `${pageIdx + 1} of ${data.pages.length}`);
+  setText('status-shelfmark', `${page.label}`);
+  document.getElementById('btn-prev')?.classList.toggle('disabled', pageIdx === 0);
+  document.getElementById('btn-next')?.classList.toggle('disabled', pageIdx >= data.pages.length - 1);
+}
+
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  VARIANT SELECTION
+// ═══════════════════════════════════════════════════════════════════════════
+function selectVariant(id) {
+  const v = window._data?.variants.find(x => x.id === id);
+  document.querySelectorAll('.variant-item').forEach(el => el.classList.remove('active'));
+  document.getElementById('sidebar-' + id)?.classList.add('active');
+  document.getElementById('sidebar-' + id)?.scrollIntoView({ block:'nearest', behavior:'smooth' });
+  renderDetailPanel(v);
+}
+
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  UTILITIES
+// ═══════════════════════════════════════════════════════════════════════════
+const totalCount = v => v?.spellings?.reduce((s, sp) => s + sp.count, 0) ?? 0;
+
+function freqBand(n) {
+  if (n >= 10) return 4;
+  if (n >= 6)  return 3;
+  if (n >= 3)  return 2;
+  return 1;
+}
+
+function setText(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = val;
+}
+
+function setHTML(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = val;
+}
+
+function esc(s) {
+  return String(s ?? '')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  BOOT
+//  ─ To use your own backend, comment out `initApp(DATA)` and use:
+//      fetchAndInit('https://your-github-pages-url/data/variants.json');
+// ═══════════════════════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  //initApp(DATA);
+  fetchAndInit('http://127.0.0.1:8080/init');
+});
 </script>
 </body>
 </html>
