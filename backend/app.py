@@ -198,6 +198,7 @@ def start_up():
         current_sent = []
         for token in tokens:
             if token in variant_map:
+                variants.append(variant_map[token])
                 sentences.append(" ".join(current_sent))
                 sentences.append({"type": "variant", "id": token, "form": token})
                 current_sent = []
