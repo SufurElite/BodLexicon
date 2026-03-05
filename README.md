@@ -1,5 +1,11 @@
 # BodLexicon 
 
+
+## Preprocessing
+
+## Database Schema
+
+
 ## To-Do
 
 - [ ] Preprocess the data as expected

@@ -732,7 +732,6 @@
     <div class="sidebar-section">
       <div class="sidebar-label">Manuscript</div>
       <div class="ms-info">
-        <div class="ms-shelfmark" id="ms-shelfmark">Loading…</div>
         <div class="ms-title"     id="ms-title">Loading…</div>
         <div class="ms-meta"      id="ms-meta">Loading…</div>
       </div>
@@ -825,7 +824,7 @@
 //  2. At the bottom of this script, replace:
 //       initApp(DATA);
 //     with:
-//       fetchAndInit('https://your-api.github.io/data/ms-bodl-959.json');
+//       fetchAndInit('http://127.0.0.1:8080/init');
 //
 //  The JSON shape your endpoint must return is documented in DATA below.
 // ═══════════════════════════════════════════════════════════════════════════
@@ -838,12 +837,8 @@ const DATA = {
 
   // Manuscript-level metadata
   manuscript: {
-    shelfmark:      "MS Bodl. 959",           // shown in sidebar + status bar
     title:          "Prick of Conscience",    // shown in sidebar
     repository:     "Bodleian Library",       // shown in sidebar
-    folioRange:     "f.1r–f.12v",             // shown in sidebar
-    date:           "c. 1350–1400",           // shown in sidebar
-    totalInstances: 312,                      // shown in status bar
   },
 
   // List of variant groups shown in the left sidebar.
@@ -852,6 +847,7 @@ const DATA = {
     {
       id:            "thogh",        // unique key – must match tokens in pages[]
       forms:         ["thogh", "though", "þogh", "þoh"],   // all attested spellings
+      works: ["fol. 1r","fol. 2r"],
       modernEnglish: "though",       // shown in tooltip + detail panel
       note:          "Northern & East Midlands variant of <em>though</em>. The <em>gh</em> spelling reflects Old English <em>þeah</em>, with scribal variation between <em>þ</em> and <em>th</em>.",
       spellings: [                   // frequency table in detail panel & tooltip
@@ -865,6 +861,7 @@ const DATA = {
       id:            "schulde",
       forms:         ["schulde", "sholde", "shulde"],
       modernEnglish: "should",
+      works: ["fol. 1r"],
       note:          "OE <em>sceolde</em>. <em>sch-</em> is a W./N. Midlands feature; <em>sholde</em> is more southerly.",
       spellings: [
         { form: "schulde", count: 7 },
@@ -876,6 +873,7 @@ const DATA = {
       id:            "mykel",
       forms:         ["mykel", "mykell", "mikel"],
       modernEnglish: "much / great",
+      works: ["fol. 1r"],
       note:          "ON <em>mikill</em>. Double-<em>l</em> variants indicate Northern/Scots scribal influence.",
       spellings: [
         { form: "mykel",  count: 5 },
@@ -887,6 +885,7 @@ const DATA = {
       id:            "worlde",
       forms:         ["worlde", "werlde", "world"],
       modernEnglish: "world",
+      works: ["fol. 1r"],
       note:          "OE <em>woruld</em>. Final <em>-e</em> is a Northern/Midlands scribal feature; <em>werlde</em> reflects an E. Midlands vowel shift.",
       spellings: [
         { form: "worlde", count: 6 },
@@ -898,6 +897,7 @@ const DATA = {
       id:            "soule",
       forms:         ["soule", "sawle", "saulle"],
       modernEnglish: "soul",
+      works: ["fol. 1r"],
       note:          "OE <em>sāwol</em>. <em>sawle</em> preserves the OE form; <em>soule</em> is the Anglo-French influenced Midlands spelling.",
       spellings: [
         { form: "soule",  count: 5 },
@@ -909,6 +909,7 @@ const DATA = {
       id:            "goode",
       forms:         ["goode", "gude"],
       modernEnglish: "good",
+      works: ["fol. 1r"],
       note:          "OE <em>gōd</em>. Final <em>-e</em> is a N. Midlands convention; <em>gude</em> is the Northern/Scots form.",
       spellings: [
         { form: "goode", count: 4 },
@@ -919,6 +920,7 @@ const DATA = {
       id:            "euery",
       forms:         ["euery", "eueri"],
       modernEnglish: "every",
+      works: ["fol. 1r"],
       note:          "OE <em>ǣfre ǣlc</em>. Variation between <em>-y</em> and <em>-i</em> finals is orthographic.",
       spellings: [
         { form: "euery", count: 4 },
@@ -929,6 +931,7 @@ const DATA = {
       id:            "ther",
       forms:         ["þer", "þere"],
       modernEnglish: "there",
+      works: ["fol. 1r"],
       note:          "OE <em>þǣr</em>. Thorn/th variation is a common 14c scribal feature.",
       spellings: [
         { form: "þer",  count: 3 },
@@ -939,6 +942,7 @@ const DATA = {
       id:            "manne",
       forms:         ["manne", "man"],
       modernEnglish: "man",
+      works: ["fol. 1r"],
       note:          "OE <em>mann</em>. Geminate <em>-nn-</em> with final <em>-e</em> is a N. Midlands scribal habit.",
       spellings: [
         { form: "manne", count: 4 },
@@ -1098,9 +1102,9 @@ async function fetchAndInit(url) {
 function initApp(data) {
   window._data        = data;
   window._currentPage = 0;
-
+  const page  = data.pages[0];
   renderMeta(data);
-  renderVariantList(data.variants);
+  renderVariantList(data.variants,page.label);
   renderPage(0);
   renderDetailPanel(data.variants[0]);
   updateFolioNav(0);
@@ -1118,29 +1122,34 @@ function initApp(data) {
 // ── Manuscript metadata ───────────────────────────────────────────────────
 function renderMeta(data) {
   const ms = data.manuscript;
-  setText('ms-shelfmark',         ms.shelfmark);
   setText('ms-title',             ms.title);
-  setText('ms-meta',              `${ms.repository} · ${ms.folioRange} · ${ms.date}`);
-  setText('status-shelfmark',     ms.shelfmark + ' · ' + data.pages[0].label);
-  setText('status-variant-count', data.variants.length);
-  setText('status-instance-count',ms.totalInstances);
+  setText('ms-meta',              `${ms.repository}`);
 }
 
 // ── Sidebar variant list ──────────────────────────────────────────────────
-function renderVariantList(variants) {
+function renderVariantList(variants, pageLabel) {
   const el = document.getElementById('variant-list');
   if (!el) return;
-  const maxTotal = Math.max(...variants.map(totalCount));
-  el.innerHTML = variants.map(v => {
+
+  // Filter variants to only those where the current page is in variant.works
+  const filtered = variants.filter(v => v.works.includes(pageLabel));
+
+  if (filtered.length === 0) {
+    el.innerHTML = '<div class="no-variants">No variants on this page</div>';
+    return;
+  }
+
+  const maxTotal = Math.max(...filtered.map(totalCount));
+
+  el.innerHTML = filtered.map(v => {
     const tot = totalCount(v);
     const pct = Math.round(tot / maxTotal * 100);
     const fc  = freqBand(tot);
-    const col = ['','#b5c8e0','var(--bodleian-gold)','#d4580a','var(--red-rubric)'][fc];
+    const col = ['', '#b5c8e0', 'var(--bodleian-gold)', '#d4580a', 'var(--red-rubric)'][fc];
     const top2 = v.spellings.slice(0,2).map(s => s.form).join(' / ');
     return `<div class="variant-item" id="sidebar-${v.id}" onclick="selectVariant('${v.id}')">
       <div style="flex:1">
         <div class="variant-word">${esc(top2)}</div>
-        <div class="variant-modern">→ ${esc(v.modernEnglish)}</div>
         <div class="freq-bar-mini" style="background:linear-gradient(90deg,${col} ${pct}%,var(--vellum) ${pct}%)"></div>
       </div>
       <div class="variant-count">${tot}</div>
@@ -1182,7 +1191,7 @@ function renderPage(pageIdx) {
 function renderDetailPanel(v) {
   if (!v) return;
   setText('detail-word',   v.spellings[0].form);
-  setHTML('detail-modern', `Modern English: <em>${esc(v.modernEnglish)}</em>`);
+  setHTML('detail-modern', `<a href="https://quod.lib.umich.edu/m/middle-english-dictionary/dictionary?utf8=%E2%9C%93&search_field=hnf&q=${esc(v.id)}">Link to Modern English Definition</a></em>`);
 
   const max  = v.spellings[0].count;
   const rows = v.spellings.map((sp, i) => {
@@ -1197,7 +1206,6 @@ function renderDetailPanel(v) {
   }).join('');
 
   setHTML('detail-body', `
-    <div class="info-note">${v.note}</div>
     <div class="detail-section-title">Spelling Frequency in This MS</div>
     <div class="freq-chart">${rows}</div>`);
 }
@@ -1216,8 +1224,7 @@ function buildTooltip(v, currentForm) {
     </div>`;
   }).join('');
   return `<div class="variant-tooltip">
-    <div class="tooltip-modern">${esc(v.modernEnglish)}</div>
-    <div class="tooltip-label">Spelling frequency in this MS</div>
+<div class="tooltip-label">Spelling frequency in this MS</div>
     ${rows}
   </div>`;
 }
@@ -1231,7 +1238,8 @@ function changePage(dir) {
   const next = window._currentPage + dir;
   if (!data || next < 0 || next >= data.pages.length) return;
   window._currentPage = next;
-
+  const page  = data.pages[next];
+  renderVariantList(data.variants,page.label);
   updateFolioNav(next);
 
   const el = document.getElementById('ms-page');
@@ -1307,8 +1315,8 @@ function esc(s) {
 //      fetchAndInit('https://your-github-pages-url/data/variants.json');
 // ═══════════════════════════════════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
-  initApp(DATA);
-  // fetchAndInit('https://your-github-pages-url/data/variants.json');
+  //initApp(DATA);
+  fetchAndInit('http://127.0.0.1:8080/init');
 });
 </script>
 </body>
